@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@layer base {
+  :root {
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-button: 'Lato', sans-serif;
+
+    --background: 240 10% 95%;
+    --foreground: 240 10% 20%;
+
+    --card: 240 10% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 240 10% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 240 10% 40%;
+    --primary-foreground: 240 10% 95%;
+
+    --secondary: 240 10% 60%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 240 10% 90%;
+    --muted-foreground: 240 10% 30%;
+
+    --accent: 240 10% 50%;
+
+    --destructive: 240 10% 20%;
+    --destructive-foreground: 240 10% 95%;
+
+    --border: 240 10% 80%;
+    --input: 240 10% 80%;
+    --ring: 240 10% 40%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 20%;
+    --foreground: 240 10% 95%;
+
+    --card: 240 10% 20%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 240 10% 20%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 240 10% 95%;
+    --primary-foreground: 240 10% 20%;
+
+    --secondary: 240 10% 40%;
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 240 10% 10%;
+    --muted-foreground: 240 10% 90%;
+
+    --accent: 240 10% 50%;
+    --accent-foreground: 240 10% 95%;
+
+    --destructive: 240 10% 95%;
+    --destructive-foreground: 240 10% 20%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 240 10% 60%;
+  }
+}
+
+@layer components {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-button {
+    font-family: var(--font-button);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  button {
+    font-family: var(--font-button);
+  }
+}
+
+.music-player {
+}
+
+.music-player.collapsed {
+}
+
+.music-player.expanded {
+}
+
+.music-player-tab {
+  transition: transform 0.3s ease;
+}
+
+.music-player-tab.collapsed {
+  transform: rotate(0deg);
+}
+
+.music-player-tab.expanded {
+  transform: rotate(180deg);
+}
+
+/* Hide scrollbar for the testimonial scroller */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

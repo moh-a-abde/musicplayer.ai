@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cache Clearer</title>
+  <link rel="icon" href="/favicon.svg?v=20240606001" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.svg?v=20240606001">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .icon-container img {
+      width: 100px;
+      height: 100px;
+    }
+    button {
+      background-color: #0099FF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <h1>MusicPlayer.ai Icon Cache Clearer</h1>
+  <p>This page helps refresh the icon cache. You should see the new icons below:</p>
+  
+  <div class="icon-container">
+    <img src="/icon.svg?v=20240606001" alt="Icon">
+    <img src="/favicon.svg?v=20240606001" alt="Favicon">
+  </div>
+  
+  <p>If you can see the icons above, they have been successfully loaded.</p>
+  
+  <button onclick="clearCache()">Force Clear Cache</button>
+  
+  <script>
+    function clearCache() {
+      // Force a cache refresh
+      window.location.reload(true);
+      
+      // Reload the main app after a short delay
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1000);
+    }
+    
+    // Preload images
+    window.onload = function() {
+      const preloadIcon = new Image();
+      preloadIcon.src = '/icon.svg?v=20240606001';
+      
+      const preloadFavicon = new Image();
+      preloadFavicon.src = '/favicon.svg?v=20240606001';
+      
+      const preloadLogo = new Image();
+      preloadLogo.src = '/logo.svg?v=20240606001';
+      
+      const preloadLogoWithIcon = new Image();
+      preloadLogoWithIcon.src = '/logo-with-icon.svg?v=20240606001';
+    }
+  </script>
+</body>
+</html> 
